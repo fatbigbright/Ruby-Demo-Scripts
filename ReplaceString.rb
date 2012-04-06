@@ -6,7 +6,7 @@ def ReplaceString(directory, target, replace)
     #
     files.each do |file|
         filePath = directory + "\\" + file
-        if file == "." or file == ".." or File.directory?(filePath)
+        if file == "." or file == ".." or File.directory?(filePath) or File.extname(filePath) != ".sql"
         else
             print file
             if !File.readable?(filePath) then
